@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.WebhookTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-24T13:48:13" hostname="Guilherme-Borges-MacBookPro-M2" time="0.006">
-  <properties/>
-  <testcase name="testItWorks()" classname="com.example.WebhookTest" time="0.006"/>
-  <system-out><![CDATA[15:48:13.195 [Test worker] INFO  i.m.c.DefaultApplicationContext$RuntimeConfiguredEnvironment - Established active environments: [test]
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

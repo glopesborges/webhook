@@ -17,5 +17,5 @@ public class WebhookController {
         log.info("Received body: {}", body);
         return HttpStatus.ACCEPTED;
     }
-    
+
 }
