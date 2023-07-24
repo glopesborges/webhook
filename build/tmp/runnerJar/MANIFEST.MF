@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Class-Path: resources/ classes/ libs/lombok-1.18.28.jar libs/micronaut-s
+ erde-jackson-2.0.1.jar libs/micronaut-serde-support-2.0.1.jar libs/micr
+ onaut-serde-api-2.0.1.jar libs/micronaut-http-client-4.0.1.jar libs/mic
+ ronaut-jackson-core-4.0.1.jar libs/micronaut-websocket-4.0.1.jar libs/m
+ icronaut-http-client-core-4.0.1.jar libs/micronaut-json-core-4.0.1.jar 
+ libs/micronaut-http-server-netty-4.0.1.jar libs/micronaut-http-netty-4.
+ 0.1.jar libs/micronaut-http-server-4.0.1.jar libs/micronaut-router-4.0.
+ 1.jar libs/micronaut-http-4.0.1.jar libs/micronaut-discovery-core-4.0.1
+ .jar libs/micronaut-context-propagation-4.0.1.jar libs/micronaut-contex
+ t-4.0.1.jar libs/micronaut-aop-4.0.1.jar libs/micronaut-buffer-netty-4.
+ 0.1.jar libs/micronaut-inject-4.0.1.jar libs/logback-classic-1.4.8.jar 
+ libs/jackson-annotations-2.15.1.jar libs/jackson-core-2.15.1.jar libs/j
+ akarta.annotation-api-2.1.1.jar libs/netty-handler-proxy-4.1.94.Final.j
+ ar libs/netty-codec-http2-4.1.94.Final.jar libs/netty-codec-http-4.1.94
+ .Final.jar libs/netty-codec-socks-4.1.94.Final.jar libs/netty-handler-4
+ .1.94.Final.jar libs/netty-codec-4.1.94.Final.jar libs/netty-transport-
+ native-unix-common-4.1.94.Final.jar libs/netty-transport-4.1.94.Final.j
+ ar libs/netty-buffer-4.1.94.Final.jar libs/reactor-core-3.5.7.jar libs/
+ micronaut-core-reactive-4.0.1.jar libs/reactive-streams-1.0.4.jar libs/
+ micronaut-core-4.0.1.jar libs/logback-core-1.4.8.jar libs/slf4j-api-2.0
+ .7.jar libs/netty-resolver-4.1.94.Final.jar libs/netty-common-4.1.94.Fi
+ nal.jar libs/jakarta.inject-api-2.0.1.jar
+Main-Class: com.example.Application
+
