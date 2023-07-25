@@ -33,6 +33,21 @@ java {
     targetCompatibility = JavaVersion.toVersion("17")
 }
 
+tasks.named("dockerfile") {
+    baseImage = "openjdk:17-alpine"
+}
+
+def dockerContainerImage = "glopesborges/webhook:$project.version"
+tasks.named("dockerBuild") {
+    images = [dockerContainerImage]
+}
+
+task printDockerContainerImage {
+    doLast {
+        println "Docker container image: ${dockerContainerImage}"
+    }
+}
+
 graalvmNative.toolchainDetection = false
 micronaut {
     runtime("netty")
