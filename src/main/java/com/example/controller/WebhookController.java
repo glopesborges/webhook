@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import io.micronaut.http.HttpStatus;
+import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Post;
@@ -14,9 +15,9 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class WebhookController {
 
-    @Post(uri = "/v1/webhook/callback")
-    public HttpStatus receiveWebhookCallback(@Body byte[] body) {
-        log.info("Received body: {}", Arrays.toString(body));
+    @Post(uri = "/v1/webhook/callback", consumes = MediaType.APPLICATION_JSON)
+    public HttpStatus receiveWebhookCallback(@Body WebhookRequestBody body) {
+        log.info("Received body: {}", body);
         return HttpStatus.OK;
     }
 
