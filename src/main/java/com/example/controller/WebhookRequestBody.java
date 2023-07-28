@@ -5,14 +5,11 @@ import io.micronaut.core.annotation.Introspected;
 import lombok.Builder;
 import lombok.extern.jackson.Jacksonized;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-
 @Builder
 @Jacksonized
 @Introspected
 public record WebhookRequestBody(
-        @JsonProperty("Content") @Valid WebhookContent content,
-        @JsonProperty("HashCode") @NotBlank String webhookSecret
+        @JsonProperty("Content") WebhookContent content,
+        @JsonProperty("HashCode") String webhookSecret
 ) {
 }
