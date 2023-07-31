@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Body;
@@ -19,10 +21,18 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class WebhookController {
 
+    ObjectMapper objectMapper = new ObjectMapper().findAndRegisterModules();
+
 
     @Post(uri = "/v1/webhook/callback", consumes = MediaType.ALL)
     public HttpStatus receiveWebhookCallback(@Body Optional<WebhookRequestBody> body) {
-        body.ifPresent(webhookRequestBody -> log.info("Received body: {}", webhookRequestBody));
+        body.ifPresent(webhookRequestBody -> {
+            try {
+                log.info("Received body: {}", objectMapper.writeValueAsString(webhookRequestBody));
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
+        });
         return HttpStatus.OK;
     }
 
