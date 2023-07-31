@@ -19,7 +19,7 @@ import java.util.Arrays;
 public class WebhookController {
 
 
-    @Post(uri = "/v1/webhook/callback", consumes = MediaType.TEXT_PLAIN)
+    @Post(uri = "/v1/webhook/callback", consumes = MediaType.ALL)
     public HttpStatus receiveWebhookCallback(@Body String body) {
         log.info("Received body: {}", body);
         return HttpStatus.OK;
