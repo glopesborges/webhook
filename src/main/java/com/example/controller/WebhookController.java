@@ -20,7 +20,7 @@ public class WebhookController {
 
 
     @Post(uri = "/v1/webhook/callback", consumes = MediaType.ALL)
-    public HttpStatus receiveWebhookCallback(@Body String body) {
+    public HttpStatus receiveWebhookCallback(@Body WebhookRequestBody body) {
         log.info("Received body: {}", body);
         return HttpStatus.OK;
     }
