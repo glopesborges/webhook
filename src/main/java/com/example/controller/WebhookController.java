@@ -16,14 +16,14 @@ import java.util.Arrays;
 import java.util.Optional;
 
 @Slf4j
-@Validated
 @Controller("/api")
 @RequiredArgsConstructor
 public class WebhookController {
 
-    @Post(uri = "/v1/webhook/callback", consumes = MediaType.ALL)
-    public HttpStatus receiveWebhookCallback(@Body Optional<String> body) {
-        body.ifPresent(webhookRequestBody -> log.info("Received body: {}", webhookRequestBody));
+    @Post(uri = "/v1/webhook/callback")
+    public HttpStatus receiveWebhookCallback(@Body String body) {
+        log.info("Received body: {}", body);
+//        body.ifPresent(webhookRequestBody -> log.info("Received body: {}", webhookRequestBody));
         return HttpStatus.OK;
     }
 
