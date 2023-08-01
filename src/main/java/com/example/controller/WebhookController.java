@@ -21,25 +21,10 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class WebhookController {
 
-    ObjectMapper objectMapper = new ObjectMapper().findAndRegisterModules();
-
-
     @Post(uri = "/v1/webhook/callback", consumes = MediaType.ALL)
-    public HttpStatus receiveWebhookCallback(@Body Optional<WebhookRequestBody> body) {
-        body.ifPresent(webhookRequestBody -> {
-            try {
-                log.info("Received body: {}", objectMapper.writeValueAsString(webhookRequestBody));
-            } catch (JsonProcessingException e) {
-                throw new RuntimeException(e);
-            }
-        });
+    public HttpStatus receiveWebhookCallback(@Body Optional<String> body) {
+        body.ifPresent(webhookRequestBody -> log.info("Received body: {}", webhookRequestBody));
         return HttpStatus.OK;
     }
-
-//    @Post(uri = "/v1/webhook/callback", consumes = MediaType.ALL)
-//    public HttpStatus receiveWebhook() {
-//        log.info("Received no body");
-//        return HttpStatus.OK;
-//    }
 
 }
